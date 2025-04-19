@@ -83,5 +83,54 @@ The U-eAdmission Online System is built using the following technologies:
 - Sagor Ahmed
 - Md. Salman Rohoman Nayeem
 
+## 🤝 Contributing
+
+We welcome contributions to the U-eAdmission Online System! This section outlines the process for contributing to this project.
+
+### Branch Structure
+
+This project maintains two primary branches:
+- `main`: Production-ready code that has been thoroughly tested and validated
+- `dev`: Testing phase branch where all new features are integrated before promotion to `main`
+
+### Contribution Process
+
+1. **Fork the Repository**: Start by forking the repository to your GitHub account.
+
+2. **Create a Feature Branch**: 
+   ```
+   git checkout -b <your-name>/<feature-name>
+   ```
+   Name your branch using either your name or a descriptive feature name.
+
+3. **Make Your Changes**: Implement your feature or bug fix.
+
+4. **Follow Coding Standards**: Ensure your code follows the project's coding standards and includes appropriate tests.
+
+5. **Commit Your Changes**: Use clear and descriptive commit messages.
+   ```
+   git commit -m "Add detailed description of the changes"
+   ```
+
+6. **Push to Your Fork**:
+   ```
+   git push origin <your-name>/<feature-name>
+   ```
+
+7. **Submit a Pull Request**: Create a pull request from your feature branch to the `dev` branch of the main repository.
+
+8. **Code Review Process**: Your PR will be reviewed by the project maintainers.
+
+9. **Merge Workflow**: After approval, your changes will be merged into the `dev` branch. The project maintainer will periodically merge `dev` into `main` for production releases.
+
+### Pull Request Guidelines
+
+- Provide a clear description of the changes in your PR
+- Include any relevant issue numbers in the PR description
+- Ensure all tests are passing
+- Update documentation if necessary
+
+Thank you for contributing to make the U-eAdmission Online System better!
+
 
 
