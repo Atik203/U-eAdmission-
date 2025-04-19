@@ -1,21 +1,9 @@
 # U-eAdmission Online System
 
-<p align="center">
-  <img src="src/main/resources/com.ueadmission/uiu_logo_update.png" alt="UIU Logo" width="150">
-</p>
-
-**Developed by Phantom Devs**
-
 ## 🚀 Project Overview
 
 The U-eAdmission Online System is a comprehensive JavaFX application designed to streamline and automate the entire university admission process. It handles every step from application submission to admission offer generation with an integrated testing and evaluation system.
 
-
-## 👥 Team Members
-
-- Md. Atikur Rahaman
-- Sagor Ahmed
-- Md. Salman Rohoman Nayeem
 
 ## ✨ Key Features
 
@@ -86,7 +74,14 @@ The U-eAdmission Online System is built using the following technologies:
    ```
    mvn javafx:run
    ```
+   
 
+
+## 👥 Team Members
+
+- [Md. Atikur Rahaman](https://github.com/Atik203) - **Team Leader**
+- Sagor Ahmed
+- Md. Salman Rohoman Nayeem
 
 
 
