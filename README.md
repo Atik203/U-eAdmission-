@@ -74,14 +74,7 @@ The U-eAdmission Online System is built using the following technologies:
    ```
    mvn javafx:run
    ```
-   
 
-
-## 👥 Team Members
-
-- [Md. Atikur Rahaman](https://github.com/Atik203) - **Team Leader**
-- Sagor Ahmed
-- Md. Salman Rohoman Nayeem
 
 ## 🤝 Contributing
 
@@ -133,4 +126,8 @@ This project maintains two primary branches:
 Thank you for contributing to make the U-eAdmission Online System better!
 
 
+## 👥 Team Members
 
+- [Md. Atikur Rahaman](https://github.com/Atik203) - **Team Leader**
+- Sagor Ahmed
+- Md. Salman Rohoman Nayeem
