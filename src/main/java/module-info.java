@@ -10,7 +10,8 @@ module com.u.eadmission.ueadmission {
     requires org.kordamp.bootstrapfx.core;
     requires eu.hansolo.tilesfx;
     requires com.almasb.fxgl.all;
+    requires atlantafx.base;
 
-    opens com.u.eadmission.ueadmission to javafx.fxml;
-    exports com.u.eadmission.ueadmission;
+    opens com.ueadmission to javafx.fxml;
+    exports com.ueadmission;
 }

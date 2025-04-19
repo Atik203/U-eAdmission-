@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import io.github.palexdev.materialfx.controls.MFXButton?>
+<?import io.github.palexdev.materialfx.controls.MFXScrollPane?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Accordion?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+<?import io.github.palexdev.materialfx.controls.MFXToggleButton?>
+<?import io.github.palexdev.materialfx.controls.MFXTextField?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+
+<StackPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ueadmission.MainController">
+    <MFXScrollPane fitToWidth="true">
+        <VBox fx:id="mainContainer" spacing="0" stylesheets="@main.css">
+
+            <!-- 🔷 Navbar -->
+            <HBox id="navbar" alignment="CENTER_LEFT" spacing="30" style="-fx-background-color: #FA4506;">
+                <padding>
+                    <Insets topRightBottomLeft="15" />
+                </padding>
+                <ImageView fitHeight="40" fitWidth="40">
+                    <image>
+                        <Image url="@uiu_logo_update.png" />
+                    </image>
+                </ImageView>
+                <Label id="title" style="-fx-text-fill: white; -fx-font-weight: bold;" text="United International University" />
+                <Region fx:id="spacer" HBox.hgrow="ALWAYS" />
+                <MFXButton id="nav-button" styleClass="mfx-button" text="Home" />
+                <MFXButton id="nav-button" styleClass="mfx-button" text="About" />
+                <MFXButton id="nav-button" styleClass="mfx-button" text="Admission" />
+                <MFXButton id="nav-button" styleClass="mfx-button" text="Mock Test" />
+                <MFXButton id="nav-button" styleClass="mfx-button" text="Contact" />
+                <MFXButton id="login-button" styleClass="mfx-button-login" text="Login" />
+            </HBox>
+
+            <!-- 🦸 Hero Section -->
+            <HBox id="hero" alignment="CENTER" spacing="50">
+                <padding>
+                    <Insets topRightBottomLeft="60" />
+                </padding>
+                <VBox alignment="CENTER_LEFT" spacing="20" HBox.hgrow="ALWAYS" maxWidth="600">
+                    <Label id="hero-title" text="Welcome to UIU Admission System" />
+                    <Label id="hero-subtitle" text="Apply, Prepare, Succeed — All in One Place" wrapText="true" />
+                    <Label id="hero-description" text="Students must login first to apply for admission and access all services. Create an account to get started with your journey at UIU." wrapText="true" />
+                    <HBox spacing="15" alignment="CENTER_LEFT">
+                        <MFXButton id="get-started-btn" styleClass="mfx-button-primary" text="Get Started" />
+                        <MFXButton id="learn-more-btn" styleClass="mfx-button-outline" text="Learn More" />
+                    </HBox>
+                </VBox>
+                <ImageView fitHeight="280" fitWidth="280">
+                    <image>
+                        <Image url="@uiu_logo_update.png" />
+                    </image>
+                </ImageView>
+            </HBox>
+
+            <!-- 📢 Notice Section -->
+            <VBox id="notice-section" alignment="CENTER" spacing="15">
+                <padding>
+                    <Insets top="60" right="20" bottom="60" left="20" />
+                </padding>
+                <Label id="section-title" text="Latest Notices" />
+                <VBox maxWidth="800" spacing="15">
+                    <Accordion styleClass="notice-accordion">
+                        <panes>
+                            <TitledPane styleClass="notice-item" text="Spring 2025 Admission Applications Open">
+                                <VBox spacing="10">
+                                    <HBox spacing="10" alignment="CENTER_LEFT">
+                                        <Label styleClass="notice-date" text="April 15, 2025" />
+                                        <Label styleClass="notice-category" text="Admission" />
+                                    </HBox>
+                                    <Label styleClass="notice-content" wrapText="true" text="Spring 2025 Admission Applications are now open. Last date of application is May 30, 2025. The admission test will be held on June 5, 2025. Results will be published on June 10, 2025. Classes will start from July 1, 2025." />
+                                    <MFXButton styleClass="mfx-button-small" text="Apply Now" />
+                                </VBox>
+                            </TitledPane>
+                            <TitledPane styleClass="notice-item" text="Scholarship Opportunities for Meritorious Students">
+                                <VBox spacing="10">
+                                    <HBox spacing="10" alignment="CENTER_LEFT">
+                                        <Label styleClass="notice-date" text="April 10, 2025" />
+                                        <Label styleClass="notice-category" text="Scholarship" />
+                                    </HBox>
+                                    <Label styleClass="notice-content" wrapText="true" text="UIU offers various merit-based scholarships for students with outstanding academic achievements. Students with GPA 5.00 in both SSC and HSC are eligible for 50% tuition fee waiver. Students with GPA 4.50+ in both SSC and HSC are eligible for 25% tuition fee waiver." />
+                                    <MFXButton styleClass="mfx-button-small" text="Learn More" />
+                                </VBox>
+                            </TitledPane>
+                            <TitledPane styleClass="notice-item" text="Mock Test Registration for Admission Preparation">
+                                <VBox spacing="10">
+                                    <HBox spacing="10" alignment="CENTER_LEFT">
+                                        <Label styleClass="notice-date" text="April 8, 2025" />
+                                        <Label styleClass="notice-category" text="Preparation" />
+                                    </HBox>
+                                    <Label styleClass="notice-content" wrapText="true" text="Register for our free mock test sessions to prepare for the upcoming admission test. Sessions are designed to familiarize students with the test format and improve their performance. Next mock test session is scheduled for April 25, 2025." />
+                                    <MFXButton styleClass="mfx-button-small" text="Register Now" />
+                                </VBox>
+                            </TitledPane>
+                        </panes>
+                    </Accordion>
+                </VBox>
+            </VBox>
+
+            <!-- 🏫 About Section -->
+            <VBox id="about-section" alignment="CENTER" spacing="15">
+                <padding>
+                    <Insets top="60" right="20" bottom="60" left="20" />
+                </padding>
+                <Label id="section-title" text="About UIU" />
+                <HBox spacing="40" alignment="CENTER" maxWidth="1000">
+                    <ImageView fitHeight="300" fitWidth="400" preserveRatio="true">
+                        <image>
+                            <Image url="@uiu_campus.jpg" /> <!-- You'll need to add this image file -->
+                        </image>
+                    </ImageView>
+                    <VBox spacing="15" alignment="CENTER_LEFT" HBox.hgrow="ALWAYS">
+                        <Label styleClass="about-subtitle" text="Excellence in Education Since 2003" />
+                        <Label styleClass="about-text" wrapText="true" text="United International University (UIU) is one of the leading private universities in Bangladesh. Established in 2003, UIU has been committed to excellence in education, research, and innovation." />
+                        <Label styleClass="about-text" wrapText="true" text="With modern facilities, qualified faculty members, and industry-focused curriculum, UIU prepares students to meet the challenges of the global job market and contribute to the society." />
+                        <Label styleClass="about-stats" text="20+ Departments | 15,000+ Students | 500+ Faculty Members" />
+                        <MFXButton styleClass="mfx-button-outline" text="Learn More About UIU" />
+                    </VBox>
+                </HBox>
+            </VBox>
+
+            <!-- ❓ FAQ Section -->
+            <VBox id="faq-section" alignment="CENTER" spacing="15">
+                <padding>
+                    <Insets top="60" right="20" bottom="60" left="20" />
+                </padding>
+                <Label id="section-title" text="Frequently Asked Questions" />
+                <VBox maxWidth="800" spacing="15">
+                    <TitledPane expanded="false" styleClass="faq-item" text="What is the Admission Test format?">
+                        <VBox>
+                            <padding>
+                                <Insets topRightBottomLeft="15" />
+                            </padding>
+                            <Label styleClass="faq-answer" text="The admission test is MCQ based and includes Math, English, and Analytical questions. The test is designed to evaluate your aptitude and knowledge in these areas. The duration of the test is 2 hours." wrapText="true" />
+                        </VBox>
+                    </TitledPane>
+                    <TitledPane expanded="false" styleClass="faq-item" text="Can I apply online?">
+                        <VBox>
+                            <padding>
+                                <Insets topRightBottomLeft="15" />
+                            </padding>
+                            <Label styleClass="faq-answer" text="Yes! You can apply and upload documents online directly from your dashboard. The online application process is simple and user-friendly. You will need to create an account first, then fill out the application form and upload the required documents." wrapText="true" />
+                        </VBox>
+                    </TitledPane>
+                    <TitledPane expanded="false" styleClass="faq-item" text="Is there a mock test available?">
+                        <VBox>
+                            <padding>
+                                <Insets topRightBottomLeft="15" />
+                            </padding>
+                            <Label styleClass="faq-answer" text="Definitely. Practice anytime with our mock test system. The mock tests are designed to simulate the actual admission test environment and help you prepare better. You can take multiple mock tests to improve your performance." wrapText="true" />
+                        </VBox>
+                    </TitledPane>
+                    <TitledPane expanded="false" styleClass="faq-item" text="What are the available scholarships?">
+                        <VBox>
+                            <padding>
+                                <Insets topRightBottomLeft="15" />
+                            </padding>
+                            <Label styleClass="faq-answer" text="UIU offers merit-based scholarships ranging from 25% to 100% tuition fee waiver based on academic excellence and admission test performance. Additionally, there are specific scholarships for underprivileged students and those with exceptional talent in sports or other extracurricular activities." wrapText="true" />
+                        </VBox>
+                    </TitledPane>
+                </VBox>
+            </VBox>
+
+            <!-- 📞 Contact Section -->
+            <VBox id="contact-section" alignment="CENTER" spacing="15">
+                <padding>
+                    <Insets top="60" right="20" bottom="60" left="20" />
+                </padding>
+                <Label id="section-title" text="Contact Us" />
+                <HBox spacing="30" alignment="CENTER" maxWidth="1000">
+                    <VBox spacing="15" alignment="CENTER" styleClass="contact-card" HBox.hgrow="ALWAYS">
+                        <padding>
+                            <Insets topRightBottomLeft="25" />
+                        </padding>
+                        <Label styleClass="contact-icon" text="📍" />
+                        <Label styleClass="contact-title" text="Address" />
+                        <Label styleClass="contact-info" text="United City, Madani Avenue, Badda, Dhaka-1212, Bangladesh" wrapText="true" textAlignment="CENTER" />
+                    </VBox>
+                    <VBox spacing="15" alignment="CENTER" styleClass="contact-card" HBox.hgrow="ALWAYS">
+                        <padding>
+                            <Insets topRightBottomLeft="25" />
+                        </padding>
+                        <Label styleClass="contact-icon" text="📧" />
+                        <Label styleClass="contact-title" text="Email" />
+                        <Label styleClass="contact-info" text="admission@uiu.ac.bd" textAlignment="CENTER" />
+                    </VBox>
+                    <VBox spacing="15" alignment="CENTER" styleClass="contact-card" HBox.hgrow="ALWAYS">
+                        <padding>
+                            <Insets topRightBottomLeft="25" />
+                        </padding>
+                        <Label styleClass="contact-icon" text="📞" />
+                        <Label styleClass="contact-title" text="Phone" />
+                        <Label styleClass="contact-info" text="+880 1234 567890" textAlignment="CENTER" />
+                    </VBox>
+                </HBox>
+            </VBox>
+
+            <!-- 🔚 Footer -->
+            <VBox id="footer" alignment="CENTER" spacing="30" style="-fx-background-color: #222222;">
+                <padding>
+                    <Insets top="50" right="20" bottom="30" left="20" />
+                </padding>
+                <HBox alignment="CENTER" spacing="60">
+                    <VBox spacing="15" alignment="CENTER_LEFT" maxWidth="300">
+                        <ImageView fitHeight="60" fitWidth="60">
+                            <image>
+                                <Image url="@uiu_logo_update.png" />
+                            </image>
+                        </ImageView>
+                        <Label styleClass="footer-text" text="UIU is committed to providing quality education and preparing students for the global challenges through innovative teaching methods and research." wrapText="true" />
+                    </VBox>
+                    <VBox spacing="15" alignment="CENTER_LEFT">
+                        <Label styleClass="footer-title" text="Quick Links" />
+                        <Label styleClass="footer-link" text="Home" />
+                        <Label styleClass="footer-link" text="About UIU" />
+                        <Label styleClass="footer-link" text="Apply Now" />
+                        <Label styleClass="footer-link" text="Academic Programs" />
+                    </VBox>
+                    <VBox spacing="15" alignment="CENTER_LEFT">
+                        <Label styleClass="footer-title" text="Resources" />
+                        <Label styleClass="footer-link" text="Student Portal" />
+                        <Label styleClass="footer-link" text="Mock Tests" />
+                        <Label styleClass="footer-link" text="FAQ" />
+                        <Label styleClass="footer-link" text="Help Center" />
+                    </VBox>
+                    <VBox spacing="15" alignment="CENTER_LEFT">
+                        <Label styleClass="footer-title" text="Social Media" />
+                        <Label styleClass="footer-link" text="Facebook" />
+                        <Label styleClass="footer-link" text="Twitter" />
+                        <Label styleClass="footer-link" text="LinkedIn" />
+                        <Label styleClass="footer-link" text="Instagram" />
+                    </VBox>
+                </HBox>
+                <HBox alignment="CENTER" spacing="10">
+                    <Label styleClass="copyright" text="© 2025 United International University. All rights reserved." />
+                </HBox>
+                <Label styleClass="developer" text="Developed by PhantomDevs" style="-fx-text-fill: #FA4506;" />
+            </VBox>
+        </VBox>
+    </MFXScrollPane>
+</StackPane>
