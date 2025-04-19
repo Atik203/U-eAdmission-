@@ -59,6 +59,5 @@ The U-eAdmission Online System is a comprehensive JavaFX application designed to
    ```
 
 
-**Developed by Phantom Devs**
 
 
