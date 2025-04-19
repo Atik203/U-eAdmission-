@@ -14,7 +14,7 @@ import java.io.IOException;
 public class Main extends Application {
     @Override
     public void start(javafx.stage.Stage stage)  throws IOException {
-
+//       this is main Class
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("/com.ueadmission/main.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 1280, 768);
         // set the fullscreen mode
