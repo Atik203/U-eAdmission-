@@ -51,7 +51,7 @@
                     <Label id="hero-subtitle" text="Apply, Prepare, Succeed — All in One Place" wrapText="true" />
                     <Label id="hero-description" text="Students must login first to apply for admission and access all services. Create an account to get started with your journey at UIU." wrapText="true" />
                     <HBox spacing="15" alignment="CENTER_LEFT">
-                        <MFXButton id="get-started-btn" styleClass="mfx-button-primary" text="Get Started" />
+                        <MFXButton id="get-started-btn" styleClass="mfx-button-primary" text="Apply Now" />
                         <MFXButton id="learn-more-btn" styleClass="mfx-button-outline" text="Learn More" />
                     </HBox>
                 </VBox>
