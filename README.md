@@ -10,6 +10,7 @@
 
 The U-eAdmission Online System is a comprehensive JavaFX application designed to streamline and automate the entire university admission process. It handles every step from application submission to admission offer generation with an integrated testing and evaluation system.
 
+
 ## 👥 Team Members
 
 - Md. Atikur Rahaman
@@ -29,6 +30,34 @@ The U-eAdmission Online System is a comprehensive JavaFX application designed to
 - **Notification System**: Email/SMS alerts for deadlines, exam schedules, and results
 - **Mock Tests**: Practice sessions with instant feedback
 - **Live Support**: In-app chat and one-to-one video meeting functionality
+
+## 📸 Screenshots
+
+### Home Screen
+![Home Screen](img/Home-1.png)
+
+<details>
+  <summary><b>Show More Screenshots</b></summary>
+
+### Additional Home Screen Views
+![Home Screen 2](img/Home-2.png)
+
+![Home Screen 3](img/Home-3.png)
+</details>
+
+## 🛠️ Technologies
+
+The U-eAdmission Online System is built using the following technologies:
+
+- **Java 21**: Core programming language
+- **JavaFX**: GUI framework for building the desktop application
+- **MySQL**: Database for storing application data, user information, and test questions
+- **JDBC**: Java Database Connectivity for database operations
+- **Maven**: Dependency management and build automation
+- **CSS**: Custom styling for the UI components
+- **WebRTC**: Implementation for video meeting functionality
+- **JavaMail API**: Email notification system
+- **Git**: Version control system
 
 ## 🔧 Installation & Setup
 

@@ -23,8 +23,6 @@ public class Main extends Application {
         stage.getIcons().add(icon);
         stage.setMaximized(true);
         stage.setTitle("UeAdmission - Home");
-        stage.setMinWidth(1280);
-        stage.setMinHeight(768);
         stage.setScene(scene);
         stage.show();
     }
