@@ -11,7 +11,11 @@ module com.u.eadmission.ueadmission {
     requires eu.hansolo.tilesfx;
     requires com.almasb.fxgl.all;
     requires atlantafx.base;
+    requires java.desktop;
+    requires java.sql;
 
+    opens com.ueadmission.student to javafx.fxml;
     opens com.ueadmission to javafx.fxml;
     exports com.ueadmission;
+    exports com.ueadmission.student;
 }

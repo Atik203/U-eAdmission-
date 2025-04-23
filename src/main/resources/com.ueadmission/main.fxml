@@ -38,7 +38,8 @@
                 <MFXButton id="nav-button" styleClass="mfx-button" text="Admission" />
                 <MFXButton id="nav-button" styleClass="mfx-button" text="Mock Test" />
                 <MFXButton id="nav-button" styleClass="mfx-button" text="Contact" />
-                <MFXButton id="login-button" styleClass="mfx-button-login" text="Login" />
+                <MFXButton fx:id="loginButton" onAction="#handleLogin" styleClass="mfx-button-login" text="Login" />
+
             </HBox>
 
             <!-- 🦸 Hero Section -->
