@@ -14,8 +14,8 @@
 <?import javafx.scene.layout.StackPane?>
 <?import com.ueadmission.components.ProfileButton?>
 
-<MFXScrollPane fitToWidth="true" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ueadmission.managestudent.ManageStudentsController">
-    <VBox spacing="0" stylesheets="@managestudent.css">
+<MFXScrollPane fitToWidth="true" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ueadmission.manageUser.ManageUserController">
+    <VBox spacing="0" stylesheets="@manageuser.css">
         <!-- Navbar -->
         <HBox id="navbar" alignment="CENTER_LEFT" spacing="30" style="-fx-background-color: #FA4506;">
             <padding>
@@ -42,31 +42,30 @@
             </HBox>
         </HBox>
 
-        <!-- Application Header Section -->
-        <VBox id="application-header" alignment="CENTER" spacing="20">
+        <!-- Header Section -->
+        <VBox id="user-header" alignment="CENTER" spacing="20">
             <padding>
                 <Insets top="40" right="20" bottom="30" left="20" />
             </padding>
 
-            <Label styleClass="page-title" text="Manage Students" />
-            <Label styleClass="page-subtitle" text="View and manage student admission applications" />
+            <Label styleClass="page-title" text="Manage Users" />
+            <Label styleClass="page-subtitle" text="View and manage system users" />
 
             <!-- Filter section -->
             <HBox alignment="CENTER" spacing="20" maxWidth="1200" prefWidth="1200">
-                <Label styleClass="semester-label" text="Current Semester: Summer 2025" />
                 <Region HBox.hgrow="ALWAYS" />
-                <MFXButton fx:id="refreshButton" text="Refresh" styleClass="mfx-button-outline" onAction="#refreshApplications" />
+                <MFXButton fx:id="refreshButton" text="Refresh" styleClass="mfx-button-outline" onAction="#refreshUsers" />
             </HBox>
         </VBox>
 
-        <!-- Applications Content Section -->
-        <VBox fx:id="applicationContainer" id="applications-content" spacing="20" alignment="CENTER">
+        <!-- Users Content Section -->
+        <VBox fx:id="userContainer" id="users-content" spacing="20" alignment="CENTER">
             <padding>
                 <Insets top="20" right="30" bottom="40" left="30" />
             </padding>
 
-            <!-- Applications List -->
-            <VBox id="applications-list" spacing="20" styleClass="content-panel" alignment="CENTER" maxWidth="1100" prefWidth="1100">
+            <!-- Users List -->
+            <VBox id="users-list" spacing="20" styleClass="content-panel" alignment="CENTER" maxWidth="1100" prefWidth="1100">
                 <padding>
                     <Insets top="25" right="30" bottom="25" left="30" />
                 </padding>
@@ -75,39 +74,37 @@
                 <StackPane fx:id="loaderContainer" visible="false" managed="true" styleClass="loader-container">
                     <VBox alignment="CENTER" spacing="15">
                         <MFXSpinner fx:id="spinner" />
-                        <Label text="Loading applications..." styleClass="loader-text" />
+                        <Label text="Loading users..." styleClass="loader-text" />
                     </VBox>
                 </StackPane>
 
-                <!-- Application List Section -->
+                <!-- User List Section -->
                 <VBox spacing="20">
-                    <HBox styleClass="application-list-header">
+                    <HBox styleClass="user-list-header">
+                        <Label text="ID" styleClass="header-cell" HBox.hgrow="ALWAYS" maxWidth="50" />
                         <Label text="Name" styleClass="header-cell" HBox.hgrow="ALWAYS" maxWidth="150" />
                         <Label text="Email" styleClass="header-cell" HBox.hgrow="ALWAYS" maxWidth="180" />
-                        <Label text="Program" styleClass="header-cell" HBox.hgrow="ALWAYS" maxWidth="150" />
-                        <Label text="Semester" styleClass="header-cell" HBox.hgrow="ALWAYS" maxWidth="100" />
-                        <Label text="Year" styleClass="header-cell" HBox.hgrow="ALWAYS" maxWidth="80" />
-                        <Label text="Date" styleClass="header-cell" HBox.hgrow="ALWAYS" maxWidth="100" />
+                        <Label text="Phone" styleClass="header-cell" HBox.hgrow="ALWAYS" maxWidth="120" />
+                        <Label text="Role" styleClass="header-cell" HBox.hgrow="ALWAYS" maxWidth="100" />
                         <Label text="Status" styleClass="header-cell" HBox.hgrow="ALWAYS" maxWidth="100" />
-                        <Label text="Payment" styleClass="header-cell" HBox.hgrow="ALWAYS" maxWidth="120" />
                     </HBox>
 
-                    <!-- Application List View -->
-                    <ListView fx:id="applicationListView" styleClass="application-list-view" prefHeight="400" VBox.vgrow="ALWAYS" />
+                    <!-- User List View -->
+                    <ListView fx:id="userListView" styleClass="user-list-view" prefHeight="400" VBox.vgrow="ALWAYS" />
                 </VBox>
 
-                <!-- No Applications Message -->
-                <Label fx:id="noApplicationsLabel" text="No applications found." 
+                <!-- No Users Message -->
+                <Label fx:id="noUsersLabel" text="No users found." 
                        styleClass="no-data-label" visible="false" managed="true" />
             </VBox>
 
-            <!-- Application Details Section -->
-            <VBox id="application-details" spacing="20" styleClass="content-panel" alignment="CENTER_LEFT" maxWidth="1100" prefWidth="1100">
+            <!-- User Details Section -->
+            <VBox id="user-details" spacing="20" styleClass="content-panel" alignment="CENTER_LEFT" maxWidth="1100" prefWidth="1100">
                 <padding>
                     <Insets top="25" right="30" bottom="25" left="30" />
                 </padding>
 
-                <Label text="Student Details" styleClass="section-title" />
+                <Label text="User Details" styleClass="section-title" />
 
                 <!-- Personal Information -->
                 <VBox spacing="15" styleClass="details-section">
@@ -115,30 +112,26 @@
                     <HBox spacing="30">
                         <VBox spacing="10" HBox.hgrow="ALWAYS">
                             <HBox styleClass="detail-row">
-                                <Label text="Program: " styleClass="detail-label" />
-                                <Label fx:id="programLabel" text="-" styleClass="detail-value" />
+                                <Label text="ID: " styleClass="detail-label" />
+                                <Label fx:id="idLabel" text="-" styleClass="detail-value" />
                             </HBox>
                             <HBox styleClass="detail-row">
-                                <Label text="Name: " styleClass="detail-label" />
-                                <Label fx:id="nameLabel" text="-" styleClass="detail-value" />
+                                <Label text="First Name: " styleClass="detail-label" />
+                                <Label fx:id="firstNameLabel" text="-" styleClass="detail-value" />
+                            </HBox>
+                            <HBox styleClass="detail-row">
+                                <Label text="Last Name: " styleClass="detail-label" />
+                                <Label fx:id="lastNameLabel" text="-" styleClass="detail-value" />
                             </HBox>
                             <HBox styleClass="detail-row">
                                 <Label text="Email: " styleClass="detail-label" />
                                 <Label fx:id="emailLabel" text="-" styleClass="detail-value" />
                             </HBox>
-                            <HBox styleClass="detail-row">
-                                <Label text="Phone: " styleClass="detail-label" />
-                                <Label fx:id="phoneLabel" text="-" styleClass="detail-value" />
-                            </HBox>
                         </VBox>
                         <VBox spacing="10" HBox.hgrow="ALWAYS">
                             <HBox styleClass="detail-row">
-                                <Label text="Date of Birth: " styleClass="detail-label" />
-                                <Label fx:id="dobLabel" text="-" styleClass="detail-value" />
-                            </HBox>
-                            <HBox styleClass="detail-row">
-                                <Label text="Gender: " styleClass="detail-label" />
-                                <Label fx:id="genderLabel" text="-" styleClass="detail-value" />
+                                <Label text="Phone: " styleClass="detail-label" />
+                                <Label fx:id="phoneLabel" text="-" styleClass="detail-value" />
                             </HBox>
                             <HBox styleClass="detail-row">
                                 <Label text="Address: " styleClass="detail-label" />
@@ -149,99 +142,35 @@
                                 <Label fx:id="cityLabel" text="-" styleClass="detail-value" />
                             </HBox>
                             <HBox styleClass="detail-row">
-                                <Label text="Postal Code: " styleClass="detail-label" />
-                                <Label fx:id="postalCodeLabel" text="-" styleClass="detail-value" />
+                                <Label text="Country: " styleClass="detail-label" />
+                                <Label fx:id="countryLabel" text="-" styleClass="detail-value" />
                             </HBox>
                         </VBox>
                     </HBox>
                 </VBox>
 
-                <!-- Academic Information -->
+                <!-- Account Information -->
                 <VBox spacing="15" styleClass="details-section">
-                    <Label text="Academic Information" styleClass="subsection-title" />
+                    <Label text="Account Information" styleClass="subsection-title" />
                     <HBox spacing="30">
                         <VBox spacing="10" HBox.hgrow="ALWAYS">
                             <HBox styleClass="detail-row">
-                                <Label text="SSC GPA: " styleClass="detail-label" />
-                                <Label fx:id="sscGpaLabel" text="-" styleClass="detail-value" />
+                                <Label text="Role: " styleClass="detail-label" />
+                                <Label fx:id="roleLabel" text="-" styleClass="detail-value" />
                             </HBox>
                             <HBox styleClass="detail-row">
-                                <Label text="SSC Year: " styleClass="detail-label" />
-                                <Label fx:id="sscYearLabel" text="-" styleClass="detail-value" />
+                                <Label text="IP Address: " styleClass="detail-label" />
+                                <Label fx:id="ipAddressLabel" text="-" styleClass="detail-value" />
                             </HBox>
                         </VBox>
                         <VBox spacing="10" HBox.hgrow="ALWAYS">
                             <HBox styleClass="detail-row">
-                                <Label text="HSC GPA: " styleClass="detail-label" />
-                                <Label fx:id="hscGpaLabel" text="-" styleClass="detail-value" />
+                                <Label text="Last Login: " styleClass="detail-label" />
+                                <Label fx:id="lastLoginTimeLabel" text="-" styleClass="detail-value" />
                             </HBox>
-                            <HBox styleClass="detail-row">
-                                <Label text="HSC Year: " styleClass="detail-label" />
-                                <Label fx:id="hscYearLabel" text="-" styleClass="detail-value" />
-                            </HBox>
-                        </VBox>
-                    </HBox>
-                </VBox>
-
-                <!-- Guardian Information -->
-                <VBox spacing="15" styleClass="details-section">
-                    <Label text="Guardian Information" styleClass="subsection-title" />
-                    <HBox spacing="30">
-                        <VBox spacing="10" HBox.hgrow="ALWAYS">
-                            <HBox styleClass="detail-row">
-                                <Label text="Father's Name: " styleClass="detail-label" />
-                                <Label fx:id="fatherNameLabel" text="-" styleClass="detail-value" />
-                            </HBox>
-                            <HBox styleClass="detail-row">
-                                <Label text="Father's Occupation: " styleClass="detail-label" />
-                                <Label fx:id="fatherOccupationLabel" text="-" styleClass="detail-value" />
-                            </HBox>
-                        </VBox>
-                        <VBox spacing="10" HBox.hgrow="ALWAYS">
-                            <HBox styleClass="detail-row">
-                                <Label text="Mother's Name: " styleClass="detail-label" />
-                                <Label fx:id="motherNameLabel" text="-" styleClass="detail-value" />
-                            </HBox>
-                            <HBox styleClass="detail-row">
-                                <Label text="Mother's Occupation: " styleClass="detail-label" />
-                                <Label fx:id="motherOccupationLabel" text="-" styleClass="detail-value" />
-                            </HBox>
-                        </VBox>
-                    </HBox>
-                    <HBox spacing="30">
-                        <VBox spacing="10" HBox.hgrow="ALWAYS">
-                            <HBox styleClass="detail-row">
-                                <Label text="Guardian Phone: " styleClass="detail-label" />
-                                <Label fx:id="guardianPhoneLabel" text="-" styleClass="detail-value" />
-                            </HBox>
-                        </VBox>
-                        <VBox spacing="10" HBox.hgrow="ALWAYS">
-                            <HBox styleClass="detail-row">
-                                <Label text="Guardian Email: " styleClass="detail-label" />
-                                <Label fx:id="guardianEmailLabel" text="-" styleClass="detail-value" />
-                            </HBox>
-                        </VBox>
-                    </HBox>
-                </VBox>
-
-                <!-- Application Status -->
-                <VBox spacing="15" styleClass="details-section">
-                    <Label text="Application Status" styleClass="subsection-title" />
-                    <HBox spacing="30">
-                        <VBox spacing="10" HBox.hgrow="ALWAYS">
                             <HBox styleClass="detail-row">
                                 <Label text="Status: " styleClass="detail-label" />
-                                <Label fx:id="statusLabel" text="-" styleClass="detail-value status-label" />
-                            </HBox>
-                            <HBox styleClass="detail-row">
-                                <Label text="Payment Status: " styleClass="detail-label" />
-                                <Label fx:id="paymentStatusLabel" text="-" styleClass="detail-value payment-status-label" />
-                            </HBox>
-                        </VBox>
-                        <VBox spacing="10" HBox.hgrow="ALWAYS">
-                            <HBox styleClass="detail-row">
-                                <Label text="Application Date: " styleClass="detail-label" />
-                                <Label fx:id="applicationDateLabel" text="-" styleClass="detail-value" />
+                                <Label fx:id="isLoggedInLabel" text="-" styleClass="detail-value" />
                             </HBox>
                         </VBox>
                     </HBox>
