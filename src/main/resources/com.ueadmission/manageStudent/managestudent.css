@@ -1,4 +1,4 @@
-/* Styles for the Application screen */
+/* Styles for the Manage Students screen */
 
 /* Import common styles */
 @import "../common.css";
@@ -200,16 +200,4 @@
 
 .mfx-button-outline:hover {
     -fx-background-color: rgba(250, 69, 6, 0.1);
-}
-
-.mfx-button-small {
-    -fx-background-color: #FA4506;
-    -fx-text-fill: white;
-    -fx-background-radius: 5px;
-    -fx-font-weight: bold;
-    -fx-padding: 8px 15px;
-}
-
-.mfx-button-small:hover {
-    -fx-background-color: #E03E00;
 }
